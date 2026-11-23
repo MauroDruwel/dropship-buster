@@ -1,8 +1,9 @@
 # 🛡️ Dropship Buster — Chrome Extension (Manifest V3)
 
 > **Zero-Click Dropship & Scam Detector with 1-Click Reverse Image & Supplier Search**
+> Built with strict TypeScript, esbuild, and Manifest V3.
 
-Dropship Buster automatically inspects online stores in real time for dropshipping footprints, unmasks 5x–10x markups, and provides 1-click shortcuts to buy the identical item directly from factory suppliers on **AliExpress**, **Google Lens**, **Temu**, and **Amazon**.
+Dropship Buster automatically inspects online stores in real time for dropshipping footprints, unmasks 5x–10x markups, catches untranslated Chinese supplier artifacts, and provides 1-click shortcuts to buy the identical item directly from factory suppliers on **AliExpress**, **Google Lens**, **Temu**, and **Amazon**.
 
 ---
 
@@ -15,10 +16,11 @@ Dropship Buster automatically inspects online stores in real time for dropshippi
    ```
 2. Enable **Developer mode** (toggle in the top-right corner).
 3. Click **Load unpacked** (top-left).
-4. Select the directory:
+4. Select the repository directory:
    ```text
-   /Users/codermauro/.gemini/antigravity/scratch/dropship-detector-extension
+   ~/Documents/Github/dropship-buster
    ```
+   *(Or select the symlink `~/dropship-buster`)*
 5. You'll see **Dropship Buster** appear in your extension bar! Pin it for quick access.
 
 ---
@@ -28,10 +30,10 @@ We built a realistic mock viral TikTok dropshipping store (`test-store`) with cl
 
 Run the local test server in your terminal:
 ```bash
-cd /Users/codermauro/.gemini/antigravity/scratch/dropship-detector-extension/test-store
+cd ~/Documents/Github/dropship-buster/test-store
 python3 serve.py
 ```
-Or open:
+Or open in Chrome:
 ```text
 http://localhost:8000/index.html
 ```
@@ -58,31 +60,42 @@ http://localhost:8000/index.html
 
 ---
 
+## 🛠️ TypeScript Development & Building
+
+The extension source code is 100% written in modern TypeScript inside `src/`.
+
+```bash
+# Install dependencies
+pnpm install
+
+# Typecheck with strict TypeScript (zero implicit any)
+pnpm run typecheck
+
+# Fast compile & bundle to Chrome extension files via esbuild
+pnpm run build
+
+# Watch mode during development
+pnpm run watch
+
+# Run the 15-site automated backtest suite (100% accuracy)
+pnpm test
+```
+
+---
+
 ## 🧠 How the Detection Engine Works
 
 Unlike basic extensions that make you manually right-click images, Dropship Buster uses **passive DOM & script heuristics** that run locally in the browser with **zero API cost**:
 
 | Category | What It Detects | Red Flag Weight |
 | :--- | :--- | :---: |
-| **Platform Footprints** | `window.Shopify`, `cdn.shopify.com`, `myshopify.com`, WooCommerce | +15 to +20 |
-| **Fulfillment Apps** | DSers, CJ Dropshipping, Oberlo, Zendrop, AutoDS, AliOrders, Spocket | +35 to +40 |
+| **Supplier Artifacts** | Untranslated Chinese characters (`[\u4e00-\u9fa5]`), 1688 CDN hashes (`O1CN01`) | +70 to +90 |
+| **Marketplace Resellers** | Bol.com / Amazon 3rd-party sellers, 5–8 day overseas delivery, unedited SKU titles (`- Stijl A`) | +50 to +60 |
+| **Fulfillment Apps** | DSers, CJ Dropshipping, Oberlo, Zendrop, AutoDS, PagePilot AI, WeTracked | +35 to +40 |
 | **Review Importers** | Loox (`loox.io`), AliReviews, Judge.me, Ryviu, Vitals | +25 to +35 |
 | **Psychological Urgency** | Fake countdown timers (`hurrify`), fake sales popups (`sales-pop`, `fomo`), fake stock counters | +15 to +25 |
-| **Shipping & Trust** | 12–25 business day transit disclaimers, generic `@gmail.com` support on a brand store | +15 to +25 |
-
----
-
-## 💡 How to Monetize This (100% Free for Users)
-
-Charging consumers a subscription for a consumer-protection extension creates heavy drop-off. The most lucrative model is:
-1. **Free for Shoppers**: Unlimited zero-click scans.
-2. **Affiliate Deep Linking**:
-   - Join **AliExpress Portals / Admitad Affiliate Program** (up to 7%–9% commission).
-   - Join **Temu Affiliate Program** ($5–$10 bounty or % of order).
-   - Append affiliate tracking IDs to the outbound search buttons (`aliExpressUrl`, `temuUrl`).
-   - Every time a shopper avoids an overpriced $50 store and buys the $8 version via your button, you earn an affiliate commission automatically.
-
----
+| **Platform Footprints** | `window.Shopify`, `cdn.shopify.com`, `myshopify.com`, WooCommerce | +15 to +20 |
+| **Trust Dampeners** | Verified brands & 1st-party retailers (Coolblue, Bol direct, Nike, Apple, IKEA) | -50 to -80 |
 
 ---
 
@@ -104,18 +117,31 @@ docker compose up -d
 ## 📁 Project Architecture
 
 ```
-dropship-detector-extension/
+dropship-buster/
 ├── Dockerfile                 # Production Python container for backend
 ├── docker-compose.yml         # Container configuration with persistent volumes
 ├── manifest.json              # Chrome Manifest V3 configuration
-├── background.js              # Service worker (context menus, tab badges, tab cache)
+├── tsconfig.json              # Strict TypeScript configuration
+├── package.json               # pnpm scripts (typecheck, build, watch, test)
+├── scripts/
+│   └── build.mjs              # Fast esbuild compilation pipeline
+├── src/                       # TypeScript Source Files
+│   ├── types/
+│   │   └── index.ts           # Type definitions (ScanResult, ProductInfo, Signals)
+│   ├── background.ts          # Service worker (context menus, badges, sync)
+│   ├── content/
+│   │   ├── detector.ts        # Passive heuristic scanner & Chinese metadata extractor
+│   │   └── overlay.ts         # In-page alert popup & price comparison modal
+│   └── popup/
+│       └── popup.ts           # Toolbar dashboard controller
+├── background.js              # Compiled service worker
 ├── content/
-│   ├── detector.js            # Passive heuristic scanner & Chinese metadata extractor
-│   ├── overlay.js             # Proactive warning popup & price comparison modal
+│   ├── detector.js            # Compiled detection engine
+│   ├── overlay.js             # Compiled in-page overlay
 │   └── styles.css             # Scoped CSS for the floating UI
 ├── popup/
 │   ├── popup.html             # Extension toolbar popup dashboard
-│   ├── popup.js               # Popup controller & community reporting
+│   ├── popup.js               # Compiled popup controller
 │   └── popup.css              # Dark-mode dashboard stylesheet
 ├── server/
 │   ├── app.py                 # Telemetry ingestion server
