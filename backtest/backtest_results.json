@@ -1,0 +1,468 @@
+{
+  "metrics": {
+    "total": 15,
+    "accuracy": 100.0,
+    "precision": 100.0,
+    "recall": 100.0,
+    "specificity": 100.0,
+    "false_positive_rate": 0.0,
+    "f1_score": 100.0,
+    "true_positives": 7,
+    "true_negatives": 8,
+    "false_positives": 0,
+    "false_negatives": 0
+  },
+  "test_cases": [
+    {
+      "name": "Bol.com Magnetic Vinyl Reseller (User Link)",
+      "url": "https://www.bol.com/nl/nl/p/magnetische-muziekspeler-magnetische-kerst-muziekdoos-voor-koelkast-met-9-nfc-mini-vinylplaten-oplaadbaar-via-usb-c-feestelijke-kerstdecoratie-uniek-verzamelcadeau-voor-kerstliefhebbers-magnetische-vinylspeler-stijl-a/9300000383482491/",
+      "category": "Marketplace Reseller",
+      "expected": "DROPSHIP",
+      "predicted": "DROPSHIP",
+      "score": 98,
+      "passed": true,
+      "signals": [
+        [
+          "Bol.com Third-Party Partner Seller",
+          25,
+          "Marketplace"
+        ],
+        [
+          "Extended Partner Delivery (5-8 Days)",
+          35,
+          "Marketplace"
+        ],
+        [
+          "AliExpress SKU Suffix & Keyword Stacking",
+          35,
+          "Marketplace"
+        ],
+        [
+          "Community Confirmed Dropshipper",
+          75,
+          "Community"
+        ]
+      ],
+      "trust_signals": []
+    },
+    {
+      "name": "Nova Home Amsterdam (Live)",
+      "url": "https://novahomeamsterdam.nl/products/nova-bloesem-tafellamp",
+      "category": "Dropship Live",
+      "expected": "DROPSHIP",
+      "predicted": "DROPSHIP",
+      "score": 98,
+      "passed": true,
+      "signals": [
+        [
+          "Shopify Infrastructure",
+          20,
+          "Platform"
+        ],
+        [
+          "Community Confirmed Dropshipper",
+          75,
+          "Community"
+        ],
+        [
+          "PagePilot AI Dropship Cloner",
+          45,
+          "Fulfillment"
+        ],
+        [
+          "WeTracked TikTok Ad Pixel",
+          30,
+          "AdTracking"
+        ],
+        [
+          "Extended Overseas Shipping (10-30 Days/DAP)",
+          25,
+          "Shipping"
+        ]
+      ],
+      "trust_signals": []
+    },
+    {
+      "name": "AuraGlow Living (Mock Test Store)",
+      "url": "http://localhost:8000/index.html",
+      "category": "Dropship Mock",
+      "expected": "DROPSHIP",
+      "predicted": "DROPSHIP",
+      "score": 98,
+      "passed": true,
+      "signals": [
+        [
+          "Shopify Infrastructure",
+          20,
+          "Platform"
+        ],
+        [
+          "DSers AliExpress Fulfillment",
+          40,
+          "Fulfillment"
+        ],
+        [
+          "Loox AliExpress Reviews Importer",
+          30,
+          "Reviews"
+        ],
+        [
+          "Artificial Countdown Timer",
+          20,
+          "Urgency"
+        ],
+        [
+          "Synthetic Social Proof Popups",
+          20,
+          "Urgency"
+        ],
+        [
+          "Free Webmail Support Address",
+          15,
+          "Trust"
+        ]
+      ],
+      "trust_signals": []
+    },
+    {
+      "name": "Viral Orthopedic Neck Cloud",
+      "url": "https://reliefease-pillow.myshopify.com/products/cervical-pillow",
+      "category": "Dropship Synthetic",
+      "expected": "DROPSHIP",
+      "predicted": "DROPSHIP",
+      "score": 98,
+      "passed": true,
+      "signals": [
+        [
+          "Shopify Infrastructure",
+          20,
+          "Platform"
+        ],
+        [
+          "CJ Dropshipping Connector",
+          40,
+          "Fulfillment"
+        ],
+        [
+          "AliReviews Importer",
+          35,
+          "Reviews"
+        ],
+        [
+          "Debutify Dropship Theme",
+          30,
+          "Theme"
+        ],
+        [
+          "Artificial Countdown Timer",
+          20,
+          "Urgency"
+        ],
+        [
+          "Stock Scarcity Warning",
+          15,
+          "Urgency"
+        ],
+        [
+          "Extended Overseas Shipping (10-30 Days/DAP)",
+          25,
+          "Shipping"
+        ]
+      ],
+      "trust_signals": []
+    },
+    {
+      "name": "Sunset Ambient Lamp Store",
+      "url": "https://lumiambient.com/products/sunset-projector",
+      "category": "Dropship Synthetic",
+      "expected": "DROPSHIP",
+      "predicted": "DROPSHIP",
+      "score": 98,
+      "passed": true,
+      "signals": [
+        [
+          "Shopify Infrastructure",
+          20,
+          "Platform"
+        ],
+        [
+          "AutoDS Multi-Channel Automation",
+          40,
+          "Fulfillment"
+        ],
+        [
+          "Ryviu AliExpress Review Importer",
+          30,
+          "Reviews"
+        ],
+        [
+          "Direct AliExpress CDN Hosting",
+          45,
+          "Assets"
+        ],
+        [
+          "Gamified Spin Wheel Discount",
+          20,
+          "Urgency"
+        ],
+        [
+          "Extended Overseas Shipping (10-30 Days/DAP)",
+          25,
+          "Shipping"
+        ]
+      ],
+      "trust_signals": []
+    },
+    {
+      "name": "Titanium Smart Health Ring",
+      "url": "https://novaring-health.shop/products/smart-ring",
+      "category": "Dropship Synthetic",
+      "expected": "DROPSHIP",
+      "predicted": "DROPSHIP",
+      "score": 98,
+      "passed": true,
+      "signals": [
+        [
+          "Shopify Infrastructure",
+          20,
+          "Platform"
+        ],
+        [
+          "Zendrop Express Sourcing",
+          40,
+          "Fulfillment"
+        ],
+        [
+          "Areviews AliExpress Importer",
+          30,
+          "Reviews"
+        ],
+        [
+          "Extended Overseas Shipping (10-30 Days/DAP)",
+          25,
+          "Shipping"
+        ]
+      ],
+      "trust_signals": []
+    },
+    {
+      "name": "ProGroom Dog Vacuum Deshedder",
+      "url": "https://petpurecare.com/products/groomer-vacuum",
+      "category": "Dropship Synthetic",
+      "expected": "DROPSHIP",
+      "predicted": "DROPSHIP",
+      "score": 98,
+      "passed": true,
+      "signals": [
+        [
+          "Shopify Infrastructure",
+          20,
+          "Platform"
+        ],
+        [
+          "Spocket Dropship Supplier",
+          35,
+          "Fulfillment"
+        ],
+        [
+          "Loox AliExpress Reviews Importer",
+          30,
+          "Reviews"
+        ],
+        [
+          "Booster Theme",
+          25,
+          "Theme"
+        ],
+        [
+          "Artificial Countdown Timer",
+          20,
+          "Urgency"
+        ],
+        [
+          "Extended Overseas Shipping (10-30 Days/DAP)",
+          25,
+          "Shipping"
+        ]
+      ],
+      "trust_signals": []
+    },
+    {
+      "name": "Gymshark (Shopify Plus Brand)",
+      "url": "https://gymshark.com/products/vital-seamless-leggings",
+      "category": "Legit Shopify DTC",
+      "expected": "LEGIT",
+      "predicted": "LEGIT",
+      "score": 0,
+      "passed": true,
+      "signals": [
+        [
+          "Shopify Infrastructure",
+          20,
+          "Platform"
+        ]
+      ],
+      "trust_signals": [
+        [
+          "Guaranteed 24-48h Domestic Delivery",
+          30
+        ]
+      ]
+    },
+    {
+      "name": "Allbirds (Shopify Plus Eco Brand)",
+      "url": "https://allbirds.com/products/mens-wool-runners",
+      "category": "Legit Shopify DTC",
+      "expected": "LEGIT",
+      "predicted": "LEGIT",
+      "score": 0,
+      "passed": true,
+      "signals": [
+        [
+          "Shopify Infrastructure",
+          20,
+          "Platform"
+        ]
+      ],
+      "trust_signals": [
+        [
+          "Guaranteed 24-48h Domestic Delivery",
+          30
+        ],
+        [
+          "Official Consumer Trust Certification",
+          25
+        ],
+        [
+          "Physical Retail / Store Pickup Network",
+          30
+        ]
+      ]
+    },
+    {
+      "name": "Glossier (Shopify Plus Beauty Brand)",
+      "url": "https://glossier.com/products/boy-brow",
+      "category": "Legit Shopify DTC",
+      "expected": "LEGIT",
+      "predicted": "LEGIT",
+      "score": 0,
+      "passed": true,
+      "signals": [
+        [
+          "Shopify Infrastructure",
+          20,
+          "Platform"
+        ]
+      ],
+      "trust_signals": [
+        [
+          "Guaranteed 24-48h Domestic Delivery",
+          30
+        ]
+      ]
+    },
+    {
+      "name": "Coolblue (Dutch Retail Giant)",
+      "url": "https://coolblue.nl/product/91823/apple-iphone-15",
+      "category": "Enterprise Retail",
+      "expected": "LEGIT",
+      "predicted": "LEGIT",
+      "score": 0,
+      "passed": true,
+      "signals": [],
+      "trust_signals": [
+        [
+          "Guaranteed 24-48h Domestic Delivery",
+          30
+        ],
+        [
+          "Official Consumer Trust Certification",
+          25
+        ],
+        [
+          "Verified Chamber of Commerce / VAT Registry",
+          15
+        ]
+      ]
+    },
+    {
+      "name": "Bol.com (Major Dutch Marketplace)",
+      "url": "https://bol.com/nl/p/sony-wh-1000xm5/93000000847291/",
+      "category": "Enterprise Retail",
+      "expected": "LEGIT",
+      "predicted": "LEGIT",
+      "score": 0,
+      "passed": true,
+      "signals": [],
+      "trust_signals": [
+        [
+          "Guaranteed 24-48h Domestic Delivery",
+          30
+        ],
+        [
+          "Official Consumer Trust Certification",
+          25
+        ],
+        [
+          "Verified Chamber of Commerce / VAT Registry",
+          15
+        ]
+      ]
+    },
+    {
+      "name": "Nike Official Store",
+      "url": "https://nike.com/t/air-force-1-07",
+      "category": "Enterprise Retail",
+      "expected": "LEGIT",
+      "predicted": "LEGIT",
+      "score": 0,
+      "passed": true,
+      "signals": [],
+      "trust_signals": [
+        [
+          "Enterprise Commerce Infrastructure",
+          40
+        ],
+        [
+          "Guaranteed 24-48h Domestic Delivery",
+          30
+        ],
+        [
+          "Physical Retail / Store Pickup Network",
+          30
+        ]
+      ]
+    },
+    {
+      "name": "Apple Store",
+      "url": "https://apple.com/shop/buy-iphone/iphone-16-pro",
+      "category": "Enterprise Retail",
+      "expected": "LEGIT",
+      "predicted": "LEGIT",
+      "score": 0,
+      "passed": true,
+      "signals": [],
+      "trust_signals": []
+    },
+    {
+      "name": "IKEA Netherlands",
+      "url": "https://ikea.com/nl/nl/p/billy-boekenkast-wit-00263850/",
+      "category": "Enterprise Retail",
+      "expected": "LEGIT",
+      "predicted": "LEGIT",
+      "score": 0,
+      "passed": true,
+      "signals": [],
+      "trust_signals": [
+        [
+          "Guaranteed 24-48h Domestic Delivery",
+          30
+        ],
+        [
+          "Verified Chamber of Commerce / VAT Registry",
+          15
+        ]
+      ]
+    }
+  ]
+}

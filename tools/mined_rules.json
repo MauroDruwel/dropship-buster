@@ -1,0 +1,73 @@
+{
+  "total_reports": 2,
+  "total_registry_items": 2,
+  "total_snapshots": 2,
+  "platform_breakdown": {
+    "Shopify": 2,
+    "Bol.com Marketplace": 2
+  },
+  "average_markup_multiplier": "7.3x",
+  "top_mined_chinese_terms": [
+    "\u51b0\u7bb1\u8d34\u9ed1\u80f6\u5531\u673a (1)",
+    "\u590d\u53e4\u5c0f\u97f3\u7bb1 (1)",
+    "\u5317\u6b27\u559c\u9e4a\u53f0\u706f (1)",
+    "\u521b\u610f\u5e8a\u5934\u5c0f\u591c\u706f (1)",
+    "\u5317\u6b27 (1)",
+    "\u559c\u9e4a (1)",
+    "\u53f0\u706f (1)",
+    "\u5e8a\u5934 (1)"
+  ],
+  "mined_1688_image_hashes": [
+    "O1CN01xK9Y2b1wE872",
+    "O1CN01mZvL9q1aB554"
+  ],
+  "discovered_patterns": [
+    {
+      "signature": "Untranslated Chinese Supplier Metadata",
+      "regex": "[\\u4e00-\\u9fa5]{2,}",
+      "confidence": 0.99,
+      "description": "Chinese wholesale product title fragments or variant names left in HTML/attributes.",
+      "recommended_weight": 50,
+      "mined_examples": [
+        "\u51b0\u7bb1\u8d34\u9ed1\u80f6\u5531\u673a",
+        "\u590d\u53e4\u5c0f\u97f3\u7bb1",
+        "\u5317\u6b27\u559c\u9e4a\u53f0\u706f",
+        "\u521b\u610f\u5e8a\u5934\u5c0f\u591c\u706f",
+        "\u5317\u6b27",
+        "\u559c\u9e4a"
+      ]
+    },
+    {
+      "signature": "1688 Wholesale Factory Image Hash (O1CN01)",
+      "regex": "O1CN01[a-zA-Z0-9]{8,}",
+      "confidence": 0.98,
+      "description": "Image filenames retaining Alibaba/1688 factory CDN image hashes without re-hosting.",
+      "recommended_weight": 45,
+      "mined_examples": [
+        "O1CN01xK9Y2b1wE872",
+        "O1CN01mZvL9q1aB554"
+      ]
+    },
+    {
+      "signature": "Marketplace Partner Suffix Pattern",
+      "regex": "-\\s*(stijl|style|type|model|kleur|color)\\s*[a-z0-9]+",
+      "confidence": 0.94,
+      "description": "AliExpress SKU variant tag inadvertently left in product titles (e.g. '- Stijl A').",
+      "recommended_weight": 35
+    },
+    {
+      "signature": "Extended Partner Fulfillment Window",
+      "regex": "[4-9]\\s*-\\s*(8|10|12)\\s*werkdagen",
+      "confidence": 0.91,
+      "description": "Slow domestic marketplace fulfillment times signifying third-party Asian dispatch.",
+      "recommended_weight": 35
+    },
+    {
+      "signature": "AI Dropship Landing Cloner (PagePilot)",
+      "regex": "pagepilot\\.ai|pagepilot-2\\.0",
+      "confidence": 0.99,
+      "description": "Presence of PagePilot.ai CSS/JS bundle generated directly from AliExpress listings.",
+      "recommended_weight": 45
+    }
+  ]
+}

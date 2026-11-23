@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropship Buster</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="brand">
+        <span class="brand-icon">🛡️</span>
+        <div>
+          <h1 class="brand-title">Dropship Buster</h1>
+          <p class="brand-tagline">Real Product & Markup Detector</p>
+        </div>
+      </div>
+      <div class="status-indicator" id="status-indicator">Active</div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="popup-body">
+      <!-- Loading State -->
+      <div id="state-loading" class="state-view">
+        <div class="spinner"></div>
+        <p>Analyzing current page...</p>
+      </div>
+
+      <!-- Result State: Product / E-Commerce Store Detected -->
+      <div id="state-result" class="state-view" style="display: none;">
+        <!-- Risk Gauge Card -->
+        <div class="card gauge-card">
+          <div class="gauge-wrapper">
+            <svg class="gauge-svg" viewBox="0 0 100 60">
+              <path class="gauge-bg" d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="#2D3748" stroke-width="8" stroke-linecap="round"/>
+              <path id="gauge-fill" class="gauge-fill" d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="#EF4444" stroke-width="8" stroke-linecap="round" stroke-dasharray="126" stroke-dashoffset="126"/>
+            </svg>
+            <div class="gauge-center">
+              <span id="risk-score-num" class="score-num">--</span>
+              <span class="score-percent">%</span>
+            </div>
+          </div>
+          <div class="gauge-label-box">
+            <div id="risk-badge" class="risk-badge badge-high">DROPSHIP RISK</div>
+            <p id="risk-summary" class="risk-summary">Multiple automated dropshipping indicators detected.</p>
+          </div>
+        </div>
+
+        <!-- Product Details & Price Comparison -->
+        <div class="card product-card" id="product-card">
+          <div class="product-top">
+            <img id="product-thumb" class="product-thumb" src="" alt="Product">
+            <div class="product-meta">
+              <h2 id="product-title" class="product-title">Product Title</h2>
+              <div class="price-comparison-grid">
+                <div class="price-box">
+                  <span class="label">Store Price</span>
+                  <span id="price-store" class="price-val price-inflated">$0.00</span>
+                </div>
+                <div class="price-arrow">➔</div>
+                <div class="price-box">
+                  <span class="label">Factory Cost</span>
+                  <span id="price-factory" class="price-val price-real">~$0.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="savings-banner" class="savings-banner">
+            💰 Save ~75% buying from the original manufacturer
+          </div>
+
+          <!-- Direct 1-Click Action Buttons -->
+          <div class="action-grid">
+            <a id="btn-lens" href="#" target="_blank" class="btn btn-lens">
+              <span>📷</span> Google Lens Reverse Image
+            </a>
+            <a id="btn-aliexpress" href="#" target="_blank" class="btn btn-aliexpress">
+              <span>📦</span> AliExpress Original Search
+            </a>
+            <div class="secondary-btn-row">
+              <a id="btn-temu" href="#" target="_blank" class="btn btn-secondary">
+                Search Temu
+              </a>
+              <a id="btn-amazon" href="#" target="_blank" class="btn btn-secondary">
+                Amazon Compare
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detected Red Flags Section -->
+        <div class="card signals-card">
+          <div class="card-title-row">
+            <h3 class="card-section-title">Detected Footprints</h3>
+            <span id="signals-count" class="count-badge">0</span>
+          </div>
+          <ul id="signals-list" class="signals-list">
+            <!-- Dynamic signals rendered here -->
+          </ul>
+        </div>
+
+        <!-- Community Report Action -->
+        <div class="card report-card" id="popup-report-section">
+          <button id="btn-toggle-report-popup" class="btn btn-outline-report">🚩 Report Listing to Community DB</button>
+          <div id="popup-report-form" style="display: none; margin-top: 10px;">
+            <input type="text" id="report-supplier-url" placeholder="AliExpress / Supplier Link (optional)" class="manual-input" style="margin-bottom: 6px;">
+            <textarea id="report-notes" placeholder="Notes (e.g. marked up 4x, AliExpress seller, etc.)" class="manual-input" style="height: 50px; resize: none; margin-bottom: 6px;"></textarea>
+            <button id="btn-submit-report-popup" class="btn btn-danger" style="width: 100%;">Submit to Database</button>
+            <div id="popup-report-success" style="display: none; color: #10B981; font-size: 11px; text-align: center; margin-top: 6px;">
+              ✅ Added to community database!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty / Non-Product State -->
+      <div id="state-empty" class="state-view" style="display: none;">
+        <div class="empty-icon">🔍</div>
+        <h2 class="empty-title">No Product Page Active</h2>
+        <p class="empty-desc">Navigate to any online store or product page to automatically scan for dropshipping markups.</p>
+        
+        <!-- Manual Image / Search Tool -->
+        <div class="card manual-card">
+          <h3 class="manual-title">Manual Product Check</h3>
+          <p class="manual-sub">Paste an image link or product name to search suppliers:</p>
+          <div class="manual-input-group">
+            <input type="text" id="manual-query-input" placeholder="e.g. Flame diffuser or image URL..." class="manual-input">
+            <button id="btn-manual-search" class="btn btn-primary">Find</button>
+          </div>
+        </div>
+
+        <!-- Test Page Prompt -->
+        <div class="test-helper-box">
+          <span>Want to test it?</span>
+          <a href="#" id="link-open-test" class="link-test">Open Mock Dropship Store</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="popup-footer">
+      <div class="footer-links">
+        <span>Dropship Buster v1.0</span>
+        <span>•</span>
+        <a href="#" id="link-options">Settings</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.git
+.github
+.gitignore
+.DS_Store
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+node_modules
+test-store
+icons/generate_icons.py

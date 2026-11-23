@@ -1,0 +1,42 @@
+{
+  "version": "1.1.0",
+  "updated_at": "2026-11-23T09:00:00Z",
+  "remote_source": "https://raw.githubusercontent.com/dropship-buster/registry/main/verified_dropshippers.json",
+  "domains": [
+    {
+      "domain": "novahomeamsterdam.nl",
+      "platform": "Shopify",
+      "risk_level": "CRITICAL",
+      "supplier": "AliExpress / 1688",
+      "supplier_origin": "China",
+      "notes": "Sells AliExpress resin bird and flower lamps marked up 800-1000%. Ships DAP direct from China.",
+      "avg_markup": "8.5x"
+    }
+  ],
+  "items": [
+    {
+      "url_pattern": "bol.com/nl/nl/p/magnetische-muziekspeler",
+      "platform": "Bol.com Marketplace",
+      "product_name": "Magnetische muziekspeler met 9 NFC mini-vinylplaten",
+      "chinese_supplier_title": "冰箱贴黑胶唱机 NFC复古小音箱 (Fridge Magnet Vinyl NFC Mini Player)",
+      "store_price": "€39.95",
+      "supplier_price": "€7.80",
+      "supplier_url": "https://www.aliexpress.com/item/1005007521839210.html",
+      "seller": "Tengyif Partner",
+      "delivery_days": "5-8",
+      "markup": "5.1x"
+    },
+    {
+      "url_pattern": "novahomeamsterdam.nl/products/nova-vogel-tafellamp",
+      "platform": "Shopify",
+      "product_name": "Nova™ Vogel Tafellamp",
+      "chinese_supplier_title": "北欧喜鹊台灯 创意床头小夜灯 (Nordic Magpie Table Lamp Bedside Light)",
+      "store_price": "€149.95",
+      "supplier_price": "€16.50",
+      "supplier_url": "https://www.aliexpress.com/item/1005006381928312.html",
+      "seller": "Nova Home Amsterdam",
+      "delivery_days": "10-20 (DAP)",
+      "markup": "9.1x"
+    }
+  ]
+}

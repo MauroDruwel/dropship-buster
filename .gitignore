@@ -1,0 +1,33 @@
+# OS Junk
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Testing & Artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Local secrets
+.env
+.env.local
+
+# Server vault snapshots (keep folder structure with .gitkeep)
+server/vault/*.json
+!server/vault/.gitkeep

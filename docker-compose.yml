@@ -1,0 +1,22 @@
+services:
+  telemetry-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dropship-buster-server:latest
+    container_name: dropship-buster-server
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8787}:8787"
+    environment:
+      - PORT=8787
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+    volumes:
+      # Persistent HTML snapshot storage across container restarts
+      - ./server/vault:/app/server/vault
+      - ./db:/app/db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8787/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

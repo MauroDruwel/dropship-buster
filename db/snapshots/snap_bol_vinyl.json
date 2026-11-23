@@ -1,0 +1,22 @@
+{
+  "id": "snap_bol_vinyl",
+  "url": "https://www.bol.com/nl/nl/p/magnetische-muziekspeler-magnetische-kerst-muziekdoos-voor-koelkast-met-9-nfc-mini-vinylplaten-oplaadbaar-via-usb-c-feestelijke-kerstdecoratie-uniek-verzamelcadeau-voor-kerstliefhebbers-magnetische-vinylspeler-stijl-a/9300000383482491/",
+  "domain": "bol.com",
+  "timestamp": "2026-11-23T08:45:00Z",
+  "chinese_metadata_detected": {
+    "chinese_characters": ["冰箱贴", "黑胶", "唱机", "音乐盒", "复古", "创意", "礼品", "款式A"],
+    "chinese_title": "创意冰箱贴黑胶唱机NFC微缩复古音乐播放器款式A",
+    "image_hashes": ["O1CN01mZvL9q1aB554"],
+    "supplier_sku": "NFC-VINYL-STYLE-A-XMAS"
+  },
+  "pricing": {
+    "store_price": 39.95,
+    "supplier_price": 7.80,
+    "currency": "EUR",
+    "markup_ratio": 5.12
+  },
+  "detected_scripts": [
+    "bol.com/shop-router"
+  ],
+  "html_snippet": "<div data-test='product-detail'><h1 data-test='title'>Magnetische muziekspeler, magnetische kerst muziekdoos voor koelkast met 9 NFC mini-vinylplaten - stijl A</h1><span class='promo-price' data-test='price'>€ 39,95</span><span class='seller-name'>Verkoop door Tengyif Store</span><p>Levertijd: 5-8 werkdagen. Verzending door partner.</p><img src='https://media.s-bol.com/mZvL9q/O1CN01mZvL9q1aB554.jpg' alt='冰箱贴黑胶唱机款式A' /></div>"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "snap_novahome_vogel",
+  "url": "https://novahomeamsterdam.nl/products/nova-vogel-tafellamp",
+  "domain": "novahomeamsterdam.nl",
+  "timestamp": "2026-11-23T08:30:00Z",
+  "chinese_metadata_detected": {
+    "chinese_characters": ["北欧", "喜鹊", "台灯", "床头", "小夜灯", "触摸", "调光", "充电", "金色"],
+    "chinese_title": "北欧喜鹊台灯卧室床头小夜灯触控充电台灯",
+    "image_hashes": ["O1CN01xK9Y2b1wE872"],
+    "supplier_sku": "CN-MAGPIE-GOLD-USB"
+  },
+  "pricing": {
+    "store_price": 149.95,
+    "supplier_price": 16.50,
+    "currency": "EUR",
+    "markup_ratio": 9.08
+  },
+  "detected_scripts": [
+    "cdn.shopify.com",
+    "shopify-assets-cdn.pagepilot.ai",
+    "pixel.wetracked.io"
+  ],
+  "html_snippet": "<div class='product-single'><h1 class='product-title'>Nova™ Vogel Tafellamp</h1><div class='loox-rating' data-rating='4.9'></div><span class='price'>€149,95</span><span style='display:none' data-variant-cn='北欧喜鹊台灯 金色充电款'></span><img src='//novahomeamsterdam.nl/cdn/shop/files/O1CN01xK9Y2b1wE872.jpg' alt='北欧喜鹊小夜灯' /><p>Levering via DAP voorwaarden: 10-20 werkdagen.</p></div>"
+}

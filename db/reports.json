@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-11-22T22:45:00Z",
+  "reports": [
+    {
+      "id": "rep_001",
+      "url": "https://novahomeamsterdam.nl",
+      "domain": "novahomeamsterdam.nl",
+      "platform": "Shopify",
+      "reported_as": "Stand-alone Dropship Store",
+      "supplier_url": "https://www.aliexpress.com/item/1005006381928312.html",
+      "supplier_price": "€14.50",
+      "store_price": "€149.95",
+      "notes": "Sells AliExpress resin bird and flower lamps marked up by 800-1000%. Ships DAP from China with PagePilot AI landing page.",
+      "votes": 28,
+      "date": "2026-11-20"
+    },
+    {
+      "id": "rep_002",
+      "url": "https://www.bol.com/nl/nl/p/magnetische-muziekspeler-magnetische-kerst-muziekdoos-voor-koelkast-met-9-nfc-mini-vinylplaten-oplaadbaar-via-usb-c-feestelijke-kerstdecoratie-uniek-verzamelcadeau-voor-kerstliefhebbers-magnetische-vinylspeler-stijl-a/9300000383482491/",
+      "domain": "bol.com",
+      "platform": "Bol.com Marketplace",
+      "reported_as": "Marketplace Dropshipper / Reseller",
+      "supplier_url": "https://www.aliexpress.com/item/1005007521839210.html",
+      "supplier_price": "€7.80",
+      "store_price": "€39.95",
+      "notes": "3rd-party seller dropshipping the viral TikTok fridge magnetic vinyl NFC music box. Uses direct AliExpress translated title ('- Stijl A') with 5-8 day delivery.",
+      "votes": 14,
+      "date": "2026-11-22"
+    }
+  ]
+}
